@@ -87,7 +87,9 @@ taco:
   orders:
     pageSize: 10
 
-
+app:
+  city-name: Minsk
+  openweather-api-key: 7189ec81afd1e9cd5869906b50c18bc4
 
 
   datasource:
