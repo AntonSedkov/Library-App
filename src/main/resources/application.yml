@@ -41,27 +41,44 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
 
+  sql:
+    init:
+      mode: always
 ---
 spring:
   config:
     activate:
       on-profile: prod
 
+  sql:
+    init:
+      mode: never
 
-  security:
-    oauth2:
-      client:
-        registration:
-          github:
-            clientId: github-client-id
-            clientSecret: github-client-secret
-            scope: email, public_profile
-  data:
-    rest:
-      base-path: /api
-      return-body-on-create: true
-      default-page-size: 20
+
+
+
+
+
+
+
+
+
+    security:
+      oauth2:
+        client:
+          registration:
+            github:
+              clientId: github-client-id
+              clientSecret: github-client-secret
+              scope: email, public_profile
+    data:
+      rest:
+        base-path: /api
+        return-body-on-create: true
+        default-page-size: 20
 
 management:
   endpoints:
