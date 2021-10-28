@@ -32,6 +32,7 @@ spring:
     username: bookworm
     password: william
     # tcp: jdbc:h2:tcp://localhost:9092/mem:voting
+
   h2:
     console:
       enabled: true
@@ -47,6 +48,21 @@ spring:
   sql:
     init:
       mode: always
+
+  data:
+    rest:
+      base-path: /api
+      default-page-size: 5
+      return-body-on-create: true
+      return-body-on-update: true
+
+
+
+
+
+
+
+
 ---
 spring:
   config:
@@ -66,19 +82,19 @@ spring:
 
 
 
-    security:
-      oauth2:
-        client:
-          registration:
-            github:
-              clientId: github-client-id
-              clientSecret: github-client-secret
-              scope: email, public_profile
-    data:
-      rest:
-        base-path: /api
-        return-body-on-create: true
-        default-page-size: 20
+      security:
+        oauth2:
+          client:
+            registration:
+              github:
+                clientId: github-client-id
+                clientSecret: github-client-secret
+                scope: email, public_profile
+      data:
+        rest:
+          base-path: /api
+          return-body-on-create: true
+          default-page-size: 20
 
 management:
   endpoints:
