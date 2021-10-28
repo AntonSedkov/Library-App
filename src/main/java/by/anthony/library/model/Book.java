@@ -3,7 +3,6 @@ package by.anthony.library.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "books")
@@ -19,7 +18,7 @@ public class Book {
     private String author;
 
     @Column(name = "year")
-    private LocalDate publishedYear;
+    private int publishedYear;
 
     @Column(name = "genre")
     @Enumerated(value = EnumType.STRING)

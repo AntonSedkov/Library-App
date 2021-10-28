@@ -9,7 +9,7 @@ server:
 spring:
   profiles:
     active:
-      - group_dev
+      - dev
 
 ---
 spring:
@@ -28,7 +28,7 @@ spring:
     generate-unique-name: false
     name: library
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:library
+    url: jdbc:h2:mem:library;DB_CLOSE_DELAY=-1
     username: bookworm
     password: william
     # tcp: jdbc:h2:tcp://localhost:9092/mem:voting
