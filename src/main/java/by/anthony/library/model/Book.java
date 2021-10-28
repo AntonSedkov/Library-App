@@ -21,6 +21,8 @@ public class Book {
     @Column(name = "year")
     private LocalDate publishedYear;
 
+    @Column(name = "genre")
+    @Enumerated(value = EnumType.STRING)
     private BookGenre genre;
 
     @Column(name = "is_ebook")
