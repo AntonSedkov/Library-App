@@ -5,7 +5,7 @@ import by.anthony.library.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserRestController {
     private final UserService userService;
 
