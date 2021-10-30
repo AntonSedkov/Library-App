@@ -2,21 +2,16 @@
     background-image: url(images/library_bg.jpg);
     background-repeat: no-repeat;
     background-color: beige;
-    height: 800px;
-    width: 1200px;
-    opacity: 0.7;
+    height: 267px;
+    width: 400px;
+    opacity: 0.5;
 }
 
-div.greetings {
-    height: 10em;
-    position: relative
+.validationError {
+    color: red;
+    font-weight: bold;
 }
 
-div.greetings h2 {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+.td {
+    border: black;
 }

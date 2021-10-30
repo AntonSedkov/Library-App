@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang=en xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit book</title>
+</head>
+<body>
+<p>
+    <tr>
+        <td th:text="*{book.getId()}"></td>
+        <td th:text="*{book.getTitle()}"></td>
+        <td th:text="*{book.getAuthor()}"></td>
+        <td th:text="*{book.getCreatedYear()}"></td>
+        <td th:text="*{book.getGenre()}"></td>
+        <td th:text="*{book.isEbook()}"></td>
+    </tr>
+</p>
+
+<form th:method="delete" th:action="@{/books/edit/{id}(id=${book.getId()})}" th:object="${book}">
+    <p><input type="submit" value="Delete Book"/></p>
+</form>
+
+
+<div>
+    <form method="POST" th:action="@{/books/edit/{id}(id=${book.getId()})}" th:object="${book}">
+        <p><label for="title">Title:
+            <input type="text" th:field="*{title}"/>
+            <span class="validationError"
+                  th:if="${#fields.hasErrors('title')}"
+                  th:errors="*{title}">title Error</span>
+        </label></p>
+        <p><label for="author">Author:
+            <input type="text" th:field="*{author}"/>
+            <span class="validationError"
+                  th:if="${#fields.hasErrors('author')}"
+                  th:errors="*{author}">author Error</span>
+        </label></p>
+        <p><label for="createdYear">Choose the year of the book:
+            <input type="text" th:field="*{createdYear}"/>
+            <span class="validationError"
+                  th:if="${#fields.hasErrors('createdYear')}"
+                  th:errors="*{createdYear}">createdYear Error</span>
+        </label></p>
+        <label for="genre">Genre:
+            <div th:each="bookgenre : ${genres}">
+                <p><input type="radio" th:field="*{genre}" th:value="${bookgenre}" th:text="${bookgenre.name()}"/></p>
+            </div>
+            <span class="validationError"
+                  th:if="${#fields.hasErrors('genre')}"
+                  th:errors="*{genre}">genre Error</span>
+        </label>
+        <label for="isEbook">E-book:
+            <p><input type="radio" th:value=true th:name="*{isEbook}"/>Yes</p>
+            <p><input type="radio" th:value=false th:name="*{isEbook}"/>No</p>
+        </label>
+        <input type="submit" value="Edit Book"/>
+    </form>
+</div>
+
+</body>
+</html>

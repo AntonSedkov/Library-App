@@ -30,8 +30,8 @@ public class Book {
     private String author;
 
     @Column(name = "year")
-    @Pattern(regexp = "^-?[0-2]?([0-9]{1,3})$")
-    private int createdYear;
+    @Pattern(regexp = "-?^[0-2]?([0-9]{1,3})$", message = "Wrong year format, for example '2021'")
+    private String createdYear;
 
     @Column(name = "genre")
     @Enumerated(value = EnumType.STRING)
