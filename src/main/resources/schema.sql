@@ -1,8 +1,9 @@
 CREATE TABLE IF NOT EXISTS users
 (
     id       identity primary key,
-    name     varchar(128) unique not null,
-    password varchar(256)        not null
+    email    varchar(64) unique not null,
+    name     varchar(64)        not null,
+    password varchar(128)       not null
 );
 CREATE TABLE IF NOT EXISTS books
 (

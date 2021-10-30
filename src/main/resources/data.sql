@@ -1,9 +1,9 @@
 DELETE
 FROM users;
-INSERT INTO users (id, name, password)
-VALUES (1, 'worm', '{noop}pass'),
-       (2, 'fox', '{noop}pass'),
-       (3, 'pig', '{noop}pass');
+INSERT INTO users (id, email, name, password)
+VALUES (1,'worm@ani.mal', 'worm', '{noop}pass'),
+       (2,'fox@ani.mal', 'fox', '{noop}pass'),
+       (3,'pig@ani.mal', 'pig', '{noop}pass');
 
 DELETE
 FROM books;
